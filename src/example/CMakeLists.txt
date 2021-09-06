@@ -135,6 +135,7 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(hello_world src/hello_world.cpp)
+add_executable(C_one src/C_one.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -148,6 +149,7 @@ add_executable(hello_world src/hello_world.cpp)
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(hello_world ${catkin_LIBRARIES})
+target_link_libraries(C_one ${catkin_LIBRARIES})
 #   ${catkin_LIBRARIES}
 # )
 
