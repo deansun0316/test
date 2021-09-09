@@ -48,11 +48,12 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
+ add_message_files(
+   FILES
 #   Message1.msg
 #   Message2.msg
-# )
+   answer.mag
+ )
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -69,10 +70,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs
-# )
+ generate_messages(
+   DEPENDENCIES
+   std_msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -138,6 +139,8 @@ add_executable(hello_world src/hello_world.cpp)
 add_executable(C_one src/C_one.cpp)
 add_executable(C_two src/C_two.cpp)
 add_executable(C_three src/C_two.cpp)
+add_executable(talker src/talker.cpp)
+#add_executable(listener src/listener.cpp)
 
 
 ## Rename C++ executable without prefix
@@ -155,6 +158,8 @@ target_link_libraries(hello_world ${catkin_LIBRARIES})
 target_link_libraries(C_one ${catkin_LIBRARIES})
 target_link_libraries(C_two ${catkin_LIBRARIES})
 target_link_libraries(C_three ${catkin_LIBRARIES})
+target_link_libraries(talker ${catkin_LIBRARIES})
+#target_link_libraries(listener ${catkin_LIBRARIES})
 
 #   ${catkin_LIBRARIES}
 # )
